@@ -5,6 +5,7 @@ These instructions assume you are developing on a Mac. See [Installing Cordova o
 # Requirements
 
 * [XCode Version 8.3 or greater](https://developer.apple.com/xcode/downloads/)
+    * You will need an Apple Developer account and a Developer Certificate
 * [Android Studio 2.2.2 or greater](https://developer.android.com/studio/index.html)
     * Android SDK 7.1.1 (API Level 25)
     * Tools
@@ -12,6 +13,12 @@ These instructions assume you are developing on a Mac. See [Installing Cordova o
     * Build-tools
 * [Node Version 7.8.0](https://nodejs.org/en/)
 * [npm Version 4.2.0](https://www.npmjs.com/)
+
+Configure the JAVA_HOME and ANDROID_HOME environment variables.
+
+Add $JAVA_HOME/bin, $ANDROID_HOME/platform-tools and $ANDROID_HOME/tools to your PATH environment variable.
+
+Alos add ```./node_modules/.bin``` to your PATH environment variable.
 
 # Installation
 
@@ -63,7 +70,5 @@ phonegap run android
 ```
 npm run test
 ```
-
-Unit tests are in the www/spec folder.
 
 ## Functional Tests with Cucumber and Appium
