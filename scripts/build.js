@@ -1,12 +1,10 @@
 var shell = require('shelljs');
 
-shell.rm('-rf','node_modules');
 shell.rm('-rf','www/libs');
 shell.rm('-rf','bower_components');
 shell.rm('-rf','platforms');
 shell.rm('-rf','plugins');
 
-shell.exec('npm install');
 shell.exec('node_modules/.bin/bower install');
 shell.exec('node_modules/.bin/bower-installer');
 

@@ -4,7 +4,7 @@
   "description": "npm run build",
   "main": "index.js",
   "scripts": {
-    "build": "node scripts/build.js",
+    "build": "rm -rf node_modules && npm install && node scripts/build.js",
     "clean": "rm -rf node_modules && rm -rf bower_components && rm -rf www/libs",
     "test": "karma start ./tests/unit/karma.conf"
   },
