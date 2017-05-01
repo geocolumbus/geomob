@@ -14,19 +14,27 @@ These instructions assume you are developing on a Mac. See [Installing Cordova o
 * [Node Version 7.8.0](https://nodejs.org/en/)
 * [npm Version 4.2.0](https://www.npmjs.com/)
 
+## iOS Configuation
+
+Follow the instructions at https://cordova.apache.org/docs/en/latest/guide/platforms/ios/
+
+Note that we found it was easy to run iOS in debug mode by opening the iOS project in Xcode and setting the team name and developer profile there. Once you set it there once, it will stay set until you delete the platforms folder and do a complete rebuild.
+
+## Android Configuration
+
 Configure the JAVA_HOME and ANDROID_HOME environment variables.
 
 Add $JAVA_HOME/bin, $ANDROID_HOME/platform-tools and $ANDROID_HOME/tools to your PATH environment variable.
 
-Alos add ```./node_modules/.bin``` to your PATH environment variable.
+## Configure node for local running
+
+Add ```./node_modules/.bin``` to your PATH environment variable.
 
 # Installation
 
 ## Automatic 
 
-```
-npm run build
-```
+```npm run build```
 
 ## Manual
 
@@ -40,10 +48,12 @@ phonegap platform add android
 phonegap platform add browser
 phonegap platform add ios
 phonegap prepare
-phonegap build
+phonegap build --buildConfig build/build.json
 ```
 
 # Running
+
+You can run the PhoneGap app in an attached device, an emulator or the browser.
 
 ### Browser
 
@@ -55,12 +65,16 @@ phonegap run browser
 
 ```
 phonegap run ios
+or
+phonegap emulate ios
 ```
 
 ### Android
 
 ```
 phonegap run android
+or
+phonegap emulate android
 ```
 
 # Running Tests

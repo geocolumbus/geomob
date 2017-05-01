@@ -1,0 +1,21 @@
+{
+    "ios": {
+        "debug": {
+            "developmentTeam": "CW6NQT7QVM"
+        },
+        "release": {
+            "codeSignIdentity": "iPhone Developer",
+            "developmentTeam": "CW6NQT7QVM",
+            "packageType": "ad-hoc"
+        }
+    },
+    "android": {
+        "debug": {
+            "keystore": "~/.android/debug.keystore",
+            "storePassword": "android",
+            "alias": "androiddebugkey",
+            "password": "android",
+            "keystoreType": ""
+        }
+    }
+}

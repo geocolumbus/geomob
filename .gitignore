@@ -6,4 +6,4 @@ plugins
 .idea
 *.iml
 
-www/libs
+www/js/libs

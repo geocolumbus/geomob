@@ -1,26 +1,28 @@
 {
-  "name": "geomob",
-  "version": "1.0.0",
-  "description": "npm run build",
-  "main": "index.js",
-  "scripts": {
-    "build": "rm -rf node_modules && npm install && node scripts/build.js",
-    "clean": "rm -rf node_modules && rm -rf bower_components && rm -rf www/libs",
-    "test": "karma start ./tests/unit/karma.conf"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/geocolumbus/geomob.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/geocolumbus/geomob/issues"
-  },
-  "homepage": "https://github.com/geocolumbus/geomob#readme",
-  "dependencies": {
-    "bower": "^1.8.0",
-    "bower-installer": "^1.3.5",
-    "shelljs": "^0.7.7"
-  }
+    "name": "geomob",
+    "version": "1.0.0",
+    "description": "npm run build",
+    "main": "index.js",
+    "scripts": {
+        "build": "rm -rf node_modules && npm install && node build/build.js",
+        "clean": "rm -rf node_modules && rm -rf bower_components && rm -rf www/libs && rm -rf plugins",
+        "test": "karma start ./tests/unit/karma.conf"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/geocolumbus/geomob.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/geocolumbus/geomob/issues"
+    },
+    "homepage": "https://github.com/geocolumbus/geomob#readme",
+    "dependencies": {
+        "bower": "1.8.0",
+        "bower-installer": "1.3.5",
+        "ios-deploy": "1.9.1",
+        "phonegap": "6.5.0",
+        "shelljs": "0.7.7"
+    }
 }
