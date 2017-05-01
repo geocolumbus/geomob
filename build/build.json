@@ -1,11 +1,11 @@
 {
     "ios": {
         "debug": {
-            "developmentTeam": "CW6NQT7QVM"
+            "developmentTeam": ""
         },
         "release": {
             "codeSignIdentity": "iPhone Developer",
-            "developmentTeam": "CW6NQT7QVM",
+            "developmentTeam": "",
             "packageType": "ad-hoc"
         }
     },
