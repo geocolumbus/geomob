@@ -7,3 +7,15 @@ body {
     padding: 0;
     width: 100%;
 }
+
+.spacer {
+    width: 150px;
+    height: 150px;
+}
+
+.panel {
+    width: 800px;
+    height: 500px;
+    margin-left: -200px;
+    background-color: blue;
+}
