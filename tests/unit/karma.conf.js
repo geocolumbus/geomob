@@ -1,7 +1,7 @@
 // Karma configuration
 // Generated on Fri Oct 14 2016 10:07:14 GMT-0400 (EDT)
 
-module.exports = function (config) {
+module.exports = function(config) {
     config.set({
 
         // base path that will be used to resolve all patterns (eg. files, exclude)
@@ -11,32 +11,27 @@ module.exports = function (config) {
         // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
         frameworks: ['jasmine', 'requirejs'],
 
-        // this makes it easier to find the views instead of ../../../www
-        proxies: {
-            '/views/': '/base/www/views/',
-            '/resources/': '/base/tests/unit/resources/'
-        },
+        proxies: {},
 
         // list of files / patterns to load in the browser
         files: [
             // Load test utilities
-            {pattern: 'www/components/jquery/dist/jquery.min.js', included: true},
+            {pattern: 'platforms/browser/www/js/libs/jquery/jquery.js', included: true},
             {pattern: 'node_modules/jasmine-jquery/lib/jasmine-jquery.js', included: true},
 
-            // Load source files and resources
-            {pattern: 'www/style/**/*.css', included: false},
-            {pattern: 'www/img/**/*.png', included: false},
-            {pattern: 'www/components/**/*.js', included: false},
-            {pattern: 'www/js/**/*.js', included: false},
-            {pattern: 'www/views/**/*.js', included: false},
+            // Load the compiled application
+            {pattern: "platforms/browser/www/js/libs/requirejs/require.js", included: false},
+            {pattern: "platforms/browser/www/js/libs/jquery/jquery.js", included: false},
+            {pattern: "platforms/browser/www/js/app.js", included: false},
+            {pattern: "platforms/browser/www/js/app/**/*.js", included: false},
 
-            // Load tests
-            {pattern: 'tests/unit/resources/*.xml', included: false},
+            // Do not load karma.conf
             {pattern: 'tests/unit/!(karma.conf).js', included: false},
 
-            {pattern: 'platforms/browser/www/**/*.js', included: false},
-            "platforms/browser/www/cordova.js",
-            "www/js/require.js",
+            // Load the test
+            "tests/unit/app-spec.js",
+
+            // Load the test configuration file
             "tests/unit/config.js"
         ],
 
@@ -45,17 +40,12 @@ module.exports = function (config) {
 
         // preprocess matching files before serving them to the browser
         // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
-        preprocessors: {
-        //    'www/js/*.js': ['coverage'],
-        //    'www/js/services/**/!(cps)/*.js': ['coverage'],
-        //    'www/js/util/**/*.js': ['coverage'],
-        //    'www/views/**/*.js': ['coverage']
-        },
+        preprocessors: {},
 
         // test results reporter to use
         // possible values: 'dots', 'progress'
         // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-        reporters: ['spec'/*, 'coverage'*/],
+        reporters: ['spec', 'coverage'],
 
         // configure spec reporter
         // maxLogLines (number)
@@ -92,10 +82,11 @@ module.exports = function (config) {
         // how many browser should be started simultaneous
         concurrency: Infinity,
 
+        browserNoActivityTimeout: 10000,
+
         // Test coverage options
         // html - creates a web view of each code file's coverage, line by line
         // text - logs to the console when 'npm test' is executed.
-        /*
         coverageReporter: {
             dir: 'coverage/',
             reporters: [
@@ -103,6 +94,5 @@ module.exports = function (config) {
                 {type: 'text'}
             ]
         }
-        */
     })
 };

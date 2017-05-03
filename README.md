@@ -51,6 +51,11 @@ phonegap prepare
 phonegap build --buildConfig build/build.json
 ```
 
+## Build Error Troubleshooting
+
+If you get a message like "Error code 65 for command: xcodebuild with args ..." then it means that you need to add your GroupId to the HelloWorld iOS project using XCode. Then rerun PhoneGap Build.
+
+
 # Running
 
 You can run the PhoneGap app in an attached device, an emulator or the browser.

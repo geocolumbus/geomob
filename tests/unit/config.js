@@ -1,6 +1,10 @@
+console.log("************** config.js **************");
+
 var tests = [];
+console.log("window.__karma__.files");
+console.log(window.__karma__.files);
 for (var file in window.__karma__.files) {
-    if (file.indexOf("/base/tests/unit") != -1 && file.indexOf("/base/tests/unit/resources") == -1 && file != "/base/tests/unit/config.js") {
+    if (file.indexOf("/base/tests/unit") != -1 && file != "/base/tests/unit/config.js") {
         tests.push(file);
     }
 }

@@ -1,12 +1,34 @@
 // Test the app entry point
-define([], function() {
+define(["app"], function(app) {
 
-    describe("initialize", function() {
+    describe("Application", function() {
 
-        it("should establish unity", function() {
+        function initializeTheApp() {
+            app.initialize();
 
-            // make sure it happened
-            expect(1).toEqual(1);
+            var e = document.createEvent('Event');
+            e.initEvent("deviceready", true, true);
+            window.document.dispatchEvent(e);
+        }
+
+        describe("initialize", function() {
+
+            beforeAll(function(done) {
+
+                // add a spy for device ready
+                spyOn(app, "deviceready");
+
+                initializeTheApp();
+
+                done();
+            });
+
+            it("should trigger deviceready", function() {
+
+                // make sure it happened
+                expect(app.deviceready).toHaveBeenCalled();
+            });
+
         });
     });
 });

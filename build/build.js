@@ -11,4 +11,4 @@ shell.exec('./node_modules/.bin/bower-installer');
 shell.exec('./node_modules/.bin/phonegap platform add android');
 shell.exec('./node_modules/.bin/phonegap platform add browser');
 shell.exec('./node_modules/.bin/phonegap platform add ios');
-shell.exec('./node_modules/.bin/phonegap build --buildConfig=build/build.json');
+shell.exec('./node_modules/.bin/phonegap build');
