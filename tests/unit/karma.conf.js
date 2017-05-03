@@ -16,20 +16,19 @@ module.exports = function(config) {
         // list of files / patterns to load in the browser
         files: [
             // Load test utilities
-            {pattern: 'platforms/browser/www/js/libs/jquery/jquery.js', included: true},
+            {pattern: '/base/www/js/libs/jquery/jquery.js', included: true},
             {pattern: 'node_modules/jasmine-jquery/lib/jasmine-jquery.js', included: true},
 
             // Load the compiled application
-            {pattern: "platforms/browser/www/js/libs/requirejs/require.js", included: false},
-            {pattern: "platforms/browser/www/js/libs/jquery/jquery.js", included: false},
-            {pattern: "platforms/browser/www/js/app.js", included: false},
-            {pattern: "platforms/browser/www/js/app/**/*.js", included: false},
+            {pattern: "/base/www/js/libs/requirejs/require.js", included: true},
+            {pattern: "/base/www/js/app.js", included: false},
+            {pattern: "/base/www/js/app/wiggle.js", included: false},
 
             // Do not load karma.conf
-            {pattern: 'tests/unit/!(karma.conf).js', included: false},
+            //{pattern: 'tests/unit/!(karma.conf).js', included: false},
 
             // Load the test
-            "tests/unit/app-spec.js",
+            {pattern: "tests/unit/app-spec.js", included: false},
 
             // Load the test configuration file
             "tests/unit/config.js"
@@ -45,7 +44,7 @@ module.exports = function(config) {
         // test results reporter to use
         // possible values: 'dots', 'progress'
         // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-        reporters: ['spec', 'coverage'],
+        reporters: ['spec'/*, 'coverage'*/],
 
         // configure spec reporter
         // maxLogLines (number)
@@ -87,6 +86,7 @@ module.exports = function(config) {
         // Test coverage options
         // html - creates a web view of each code file's coverage, line by line
         // text - logs to the console when 'npm test' is executed.
+        /*
         coverageReporter: {
             dir: 'coverage/',
             reporters: [
@@ -94,5 +94,6 @@ module.exports = function(config) {
                 {type: 'text'}
             ]
         }
+        */
     })
 };
