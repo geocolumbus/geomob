@@ -23,6 +23,8 @@
         "bower-installer": "1.3.5",
         "ios-deploy": "1.9.1",
         "ios-sim":"5.0.13",
+        "jasmine":"2.6.0",
+        "karma":"1.6.0",
         "phonegap": "6.5.0",
         "shelljs": "0.7.7"
     }

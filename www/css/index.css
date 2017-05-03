@@ -1,21 +1,52 @@
 body {
-    -webkit-touch-callout: none;    /* prevent callout to copy image, etc when tap to hold */
+    -webkit-touch-callout: none; /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none; /* prevent webkit from resizing text to fit */
-    -webkit-user-select: none;      /* prevent copy paste, to allow, change 'none' to 'text' */
+    -webkit-user-select: none; /* prevent copy paste, to allow, change 'none' to 'text' */
     height: 100%;
     margin: 0;
     padding: 0;
     width: 100%;
+    font-family: sans-serif;
+    background-image: url("../img/glass_container.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+h1 {
+    text-align: center;
+    background-color: green;
+    color: white;
+    padding: 2px 0;
 }
 
 .spacer {
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
 }
 
-.panel {
-    width: 800px;
+.water {
+    width: 300%;
     height: 500px;
-    margin-left: -200px;
-    background-color: blue;
+    margin-left: -100%;
+    background-color: deepskyblue;
+    opacity: 0.3;
+}
+
+@media (orientation: landscape) {
+    .water {
+        width: 500%;
+        margin-left: -200%;
+    }
+
+    .spacer {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+.rotation-indicator {
+    font-size: 96px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 30px;
 }
