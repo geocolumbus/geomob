@@ -6,10 +6,8 @@ define(["app"], function(app) {
 
     describe("Application", function() {
 
-        console.log("Application");
-
         function initializeTheApp() {
-            console.log("initializeTheApp()");
+
             app.initialize();
 
             var e = document.createEvent('Event');
@@ -23,22 +21,18 @@ define(["app"], function(app) {
 
             beforeAll(function(done) {
 
-                console.log("beforeAll");
-
                 // add a spy for device ready
-                spyOn(app, "deviceready");
+                spyOn(app, "onDeviceReady");
 
                 initializeTheApp();
 
                 done();
             });
 
-            it("should trigger deviceready", function() {
-
-                console.log("should trigger");
+            it("should trigger onDeviceReady", function() {
 
                 // make sure it happened
-                expect(app.deviceready).toHaveBeenCalled();
+                expect(app.onDeviceReady).toHaveBeenCalled();
             });
 
         });
