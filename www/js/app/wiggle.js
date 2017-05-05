@@ -35,9 +35,7 @@ define(["jquery"], function($) {
                 deviceRotationAngle = Math.atan2(smoothedAccelerationX, smoothedAccelerationY) * 180 / 3.14159;
             }
 
-            if (window.orientation == 0) {
-                cssAngle = deviceRotationAngle;
-            }
+            cssAngle = deviceRotationAngle;
 
             if (window.orientation == -90) {
                 cssAngle = -90 + deviceRotationAngle;
