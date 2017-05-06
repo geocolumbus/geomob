@@ -13,8 +13,8 @@ These instructions assume you are developing on a Mac. See [Installing Cordova o
     * Tools
     * Platform-tools
     * Build-tools
-* [Node Version 7.8.0](https://nodejs.org/en/)
-* [npm Version 4.2.0](https://www.npmjs.com/)
+* [Node Version 7.8.0](https://nodejs.org/en/) or latest.
+* [npm Version 4.2.0](https://www.npmjs.com/) or latest.
 
 ## iOS Configuation
 
@@ -91,6 +91,26 @@ phonegap emulate android
 npm run test
 ```
 
+Unit tests are in the tests folder.
+
 ## Functional Tests with Cucumber and Appium
 
 TODO
+
+# Other Resources
+
+There are many ways to get started with PhoneGap.
+
+## PhoneGap's official quick start guide
+
+[Getting Started with PhoneGap](http://phonegap.com/getstarted/)
+
+## IDE's
+
+### Eclipse
+
+[Setup PhoneGap for Android on Eclipse](http://www.tech-faq.com/setup-phonegap-for-android-on-eclipse.html)
+
+### IntelliJ IDEA
+
+[Using PhoneGap/Cordova with IntelliJ 2017.1](https://www.jetbrains.com/help/idea/2017.1/using-phonegap-cordova.html)
