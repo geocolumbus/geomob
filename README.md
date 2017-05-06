@@ -36,13 +36,14 @@ Add ```./node_modules/.bin``` to your PATH environment variable.
 
 # Installation
 
+```git clone https://github.com/geocolumbus/geomob.git```
+
 ## Automatic 
 
 ```npm run build```
 
 ## Manual
 
-Make sure you add ```./node_modules/.bin``` to your local machine's path. This allows you to call node dependencies local to the project, and is required for the following steps to work.
 
 ```
 npm install
