@@ -1,6 +1,8 @@
 This is a starter PhoneGap application with a node.js builder, bower to manage javascript app dependencies, jasmine and karma for unit tests and cucumber and appium for functional tests. It builds a simple tilt meter.
 
-<img src="https://github.com/geocolumbus/geomob/blob/master/screen_shot.png" width=200 style="margin:auto"/>
+<div style="width:100%; text-align:center; padding-bottom: 12px;">
+<img src="https://github.com/geocolumbus/geomob/blob/master/screen_shot.png" width=200"/>
+</div>
 
 These instructions assume you are developing on a Mac. See [Installing Cordova on Windows](https://evothings.com/doc/build/cordova-install-windows.html) for Windows installation instructions.
 
@@ -63,27 +65,21 @@ You can run the PhoneGap app in an attached device, an emulator or the browser.
 
 ### Browser
 
+There are various run options:
+
 ```
 phonegap run browser
-```
 
-### iOS
-
-```
-phonegap run ios
-or
 phonegap emulate ios
-```
 
-### Android
+phonegap run ios
 
-```
-phonegap run android
-or
 phonegap emulate android
+
+phonegap run android
 ```
 
-# Running Tests
+# Running Unit Tests
 
 ## Unit Tests with Karma and Jasmine
 
@@ -91,26 +87,18 @@ phonegap emulate android
 npm run test
 ```
 
-Unit tests are in the tests folder.
+You can inspect test results by navigating your browser to:
 
-## Functional Tests with Cucumber and Appium
+coverage/report-html/index.html
 
-TODO
 
 # Other Resources
 
 There are many ways to get started with PhoneGap.
 
-## PhoneGap's official quick start guide
-
 [Getting Started with PhoneGap](http://phonegap.com/getstarted/)
-
-## IDE's
-
-### Eclipse
 
 [Setup PhoneGap for Android on Eclipse](http://www.tech-faq.com/setup-phonegap-for-android-on-eclipse.html)
 
-### IntelliJ IDEA
 
 [Using PhoneGap/Cordova with IntelliJ 2017.1](https://www.jetbrains.com/help/idea/2017.1/using-phonegap-cordova.html)

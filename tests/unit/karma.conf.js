@@ -5,54 +5,65 @@ module.exports = function(config) {
     config.set({
 
         // base path that will be used to resolve all patterns (eg. files, exclude)
-        basePath: '../../',
+        basePath: "../../",
 
         // frameworks to use
         // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-        frameworks: ['jasmine', 'requirejs'],
+        frameworks: ["jasmine", "requirejs"],
 
         proxies: {},
 
         // list of files / patterns to load in the browser
         files: [
             // Load test utilities
-            {pattern: 'www/js/libs/jquery/jquery.js', included: true},
-            {pattern: 'node_modules/jasmine-jquery/lib/jasmine-jquery.js', included: true},
+            {pattern: "www/js/libs/jquery/jquery.js", included: true},
+            {pattern: "node_modules/jasmine-jquery/lib/jasmine-jquery.js", included: true},
 
             // Load the compiled application
-            //{pattern: "/base/www/js/libs/requirejs/require.js", included: true},
-            {pattern: "www/js/*.js", included: false},
-            {pattern: "www/js/app/*.js", included: false},
+            {pattern: "www/js/app.js", included: false},
+            {pattern: "www/js/app/**/*.js", included: false},
 
-            // Do not load karma.conf
-            //{pattern: 'tests/unit/!(karma.conf).js', included: false},
-
-            // Load the test
-            {pattern: "tests/unit/*-spec.js", included: false},
+            // Load the tests
+            {pattern: "tests/unit/**/*-spec.js", included: false},
 
             // Load the test configuration file
             "tests/unit/config.js"
         ],
 
         // list of files to exclude
-        exclude: [],
+        exclude: [
+        ],
 
         // preprocess matching files before serving them to the browser
         // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
-        preprocessors: {},
+        preprocessors: {
+            "www/js/app.js":["coverage"],
+            "www/js/app/**/*.js":["coverage"]
+        },
 
         // test results reporter to use
-        // possible values: 'dots', 'progress'
-        // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-        reporters: ['spec'/*, 'coverage'*/],
+        // spec - displays the result of each unit test
+        // coverage - indicates the percentage of code covered for each tested file
+        reporters: ["spec", "coverage"],
 
-        // configure spec reporter
+        // Configure the spec reporter.
         // maxLogLines (number)
         // true or false switches:
         // suppressErrorSummary, suppressFailed, suppressPassed, suppressSkipped, showSpecTiming
         specReporter: {
             maxLogLines: 5,
             showSpecTiming: true
+        },
+
+        // Configure the test coverage reporter.
+        // html - creates a web view of each code file's coverage, line by line
+        // text - logs to the console when "npm test" is executed.
+        coverageReporter: {
+            dir: "coverage/",
+            reporters: [
+                {type: "html", subdir: "report-html"},
+                {type: "text"}
+            ]
         },
 
         // web server port
@@ -70,30 +81,15 @@ module.exports = function(config) {
 
         // start these browsers
         // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-        browsers: ['PhantomJS'],
-        //browsers: ['Chrome'],
+        browsers: ["PhantomJS"],
+        //browsers: ["Chrome"],
 
         // Continuous Integration mode
         // if true, Karma captures browsers, runs the tests and exits
         singleRun: true,
 
         // Concurrency level
-        // how many browser should be started simultaneous
-        concurrency: Infinity,
-
-        browserNoActivityTimeout: 10000,
-
-        // Test coverage options
-        // html - creates a web view of each code file's coverage, line by line
-        // text - logs to the console when 'npm test' is executed.
-        /*
-        coverageReporter: {
-            dir: 'coverage/',
-            reporters: [
-                {type: 'html', subdir: 'report-html'},
-                {type: 'text'}
-            ]
-        }
-        */
+        // how many browsers should be started simultaneous
+        concurrency: Infinity
     })
 };

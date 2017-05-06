@@ -1,7 +1,3 @@
-// Test the app entry point
-
-console.log("app-spec.js");
-
 define(["app"], function(app) {
 
     describe("Application", function() {
@@ -16,8 +12,6 @@ define(["app"], function(app) {
         }
 
         describe("initialize", function() {
-
-            console.log("initialize");
 
             beforeAll(function(done) {
 
