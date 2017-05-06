@@ -49,8 +49,7 @@ bower-installer
 phonegap platform add android
 phonegap platform add browser
 phonegap platform add ios
-phonegap prepare
-phonegap build --buildConfig build/build.json
+phonegap build
 ```
 
 ## Build Error Troubleshooting
@@ -93,3 +92,5 @@ npm run test
 ```
 
 ## Functional Tests with Cucumber and Appium
+
+TODO
